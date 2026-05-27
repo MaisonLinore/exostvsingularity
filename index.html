@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>EXOS+ TV | Sovereign Agentic Singularity</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at 20% 30%, #0a0f1e, #03050b);
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, 'Orbitron', monospace;
+            color: #eef5ff;
+            line-height: 1.4;
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+        }
+
+        /* glitch/tech underline effect */
+        .glow-text {
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5), 0 0 12px rgba(0, 200, 255, 0.3);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* header section */
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.25);
+            padding-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff, #4efff0, #2b9eff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        .hero .tagline {
+            font-size: 1.2rem;
+            color: #a0c4ff;
+            max-width: 800px;
+            margin: 1rem auto 0;
+            font-weight: 300;
+        }
+
+        /* metrics grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+            margin: 2.5rem 0;
+        }
+
+        .card {
+            background: rgba(10, 20, 30, 0.55);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 2rem;
+            padding: 1.6rem 1.8rem;
+            transition: all 0.25s ease;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .card:hover {
+            border-color: #4efff0;
+            box-shadow: 0 0 18px rgba(0, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            color: #8efff0;
+            margin-bottom: 1rem;
+            border-left: 3px solid #0cf;
+            padding-left: 12px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            font-family: 'Orbitron', monospace;
+            background: linear-gradient(to right, #fff, #6efff0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #9bb8e6;
+            margin-top: 0.5rem;
+        }
+
+        .channel-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(100, 200, 255, 0.3);
+            padding: 0.7rem 0;
+            font-family: monospace;
+            font-size: 1rem;
+        }
+
+        .channel-row span:first-child {
+            font-weight: 600;
+            color: #b9f2ff;
+        }
+
+        .channel-row span:last-child {
+            color: #4efff0;
+            font-weight: bold;
+        }
+
+        .badge {
+            background: rgba(0, 255, 255, 0.15);
+            display: inline-block;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(0,255,200,0.4);
+        }
+
+        .big-percent {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .agent-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 1rem 0;
+            background: #071a24;
+            padding: 0.8rem;
+            border-radius: 1.5rem;
+        }
+
+        .pulse {
+            width: 12px;
+            height: 12px;
+            background: #0f6;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #0f6;
+            animation: pulseAnim 1.2s infinite;
+        }
+
+        @keyframes pulseAnim {
+            0% { opacity: 0.4; transform: scale(0.8);}
+            100% { opacity: 1; transform: scale(1.2);}
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 3rem 0 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2.6rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: linear-gradient(95deg, #0cf, #0099ff);
+            color: #010b14;
+            box-shadow: 0 0 12px #0cf;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.02);
+            background: linear-gradient(95deg, #2efff0, #0c8eff);
+            box-shadow: 0 0 22px #0cf;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #0cf;
+            color: #0cf;
+            backdrop-filter: blur(4px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 200, 255, 0.15);
+            border-color: #fff;
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            font-size: 0.75rem;
+            color: #7d8fb3;
+            border-top: 1px solid rgba(0,255,200,0.2);
+            padding-top: 1.8rem;
+        }
+
+        @media (max-width: 700px) {
+            body { padding: 1rem; }
+            .hero h1 { font-size: 2rem; }
+            .stat-number { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1>⚡ THE MEDIA SINGULARITY ⚡</h1>
+        <div class="tagline">
+            EXOS+ TV decouples compute from rendering — sovereign agentic intelligence across global silicon photonics infrastructure.<br>
+            <span style="color:#4efff0;">Foton AI models talk to each other in real time — across every platform. Linear is dead.</span>
+        </div>
+    </div>
+
+    <!-- Grid card pertama: Global Node Map + Energy Optimization -->
+    <div class="grid">
+        <div class="card">
+            <h3>🌍 GLOBAL NODE MAP</h3>
+            <div class="big-percent">-84%</div>
+            <div class="stat-label">REDUCTION IN GPU THERMAL LOAD <br> VS STANDARD LLM RENDERING</div>
+            <div style="margin-top: 1rem;"><span class="badge">DISTRIBUTED BY EXOS+ INFRASTRUCTURE</span></div>
+            <div style="margin-top: 1.2rem; font-size:0.8rem;">Sovereign Layer O Synthesis ⚡</div>
+        </div>
+
+        <!-- Channel throughput cards -->
+        <div class="card">
+            <h3>📡 ACTIVE CHANNEL THROUGHPUT</h3>
+            <div class="channel-row"><span>CH_102: GEO_STRAT</span><span>1.8 GB/s</span></div>
+            <div class="channel-row"><span>CH_003: QUANT_FIN</span><span>12.1 GB/s</span></div>
+            <div class="channel-row"><span>CH_441: BIO_CORE</span><span>9.4 TB/s*</span></div>
+            <div class="channel-row"><span>CH_088: NEWS_SYNTH</span><span>4.26 GB/s</span></div>
+            <div class="stat-label" style="margin-top:12px">*bio-optical fiber routing</div>
+        </div>
+
+        <div class="card">
+            <h3>🧠 ACTIVE AGENT</h3>
+            <div class="agent-status">
+                <div class="pulse"></div>
+                <span><strong>AGENT_ORCHESTRATOR_01</strong> · SYNTHESIZING REAL-TIME ASSETS</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <span>📡 BROADCASTS</span>
+                <span style="color:#0cf; font-family: monospace;">LIVE / 24/7</span>
+            </div>
+            <div style="margin-top: 1rem; background: #021018; border-radius: 2rem; padding: 0.5rem 1rem; text-align: center;">
+                <span>🔄 REFRESHING <strong style="color: #0cf;">1.2s</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second row: tambahan IP protection & Credit -->
+    <div class="grid">
+        <div class="card">
+            <h3>🔒 IP PROTECTION</h3>
+            <div>CREATED AND IP PROTECTION DESIGN BY</div>
+            <div style="font-size: 1.6rem; font-weight: bold; letter-spacing: 1px;">EDWIN MIRFAZLI</div>
+            <div style="margin-top: 0.8rem;"><span class="badge">Sovereign Layer O Synthesis</span></div>
+        </div>
+
+        <div class="card">
+            <h3>⚙️ ACTIVE_AGENT BROADCAST STACK</h3>
+            <div style="font-family: monospace; line-height: 1.6;">
+                ➤ AI Orchestrator · Foton Mesh<br>
+                ➤ Real‑time asset synthesis <br>
+                ➤ Photonic compute fabric<br>
+                ➤ <span style="color:#0cf;">> 10⁶ events/sec</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>📡 CH_088: NEWS_SYNTH</h3>
+            <div class="stat-number">4.26B/s</div>
+            <div class="stat-label">BANDWIDTH · SYNTHETIC MEDIA STREAM</div>
+            <div style="margin-top: 1rem;">✦ Global agentic consensus ✦</div>
+        </div>
+    </div>
+
+    <!-- tombol aksi -->
+    <div class="button-group">
+        <a href="https://maisonlinore.github.io/tvnews/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            🚀 INITIALIZE STREAM
+        </a>
+        <a href="#" class="btn btn-secondary" id="viewArchBtn">
+            🧬 VIEW ARCHITECTURE
+        </a>
+    </div>
+
+    <footer>
+        EXOS+ TV · Sovereign Agentic Intelligence · Distributed by EXOS+ Infrastructure<br>
+        *Simulated metrics for agentic broadcast layer | Linear is dead.
+    </footer>
+</div>
+
+<script>
+    // Optional: smooth scroll atau alert untuk VIEW ARCHITECTURE (karena belum ada link khusus)
+    document.getElementById('viewArchBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        alert("🔭 Architectural overview: Photonic agent mesh · Foton AI cross-talk · Real-time synthesis layer. Full documentation coming.");
+        // jika suatu saat ingin scroll ke bagian tertentu, bisa ditambahkan
+    });
+</script>
+</body>
+</html>
