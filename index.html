@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <title>EXOS+ TV · Agentic Stream</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* Hilangkan semua transisi/animasi */
+            transition: none !important;
+            animation: none !important;
+        }
+
+        body {
+            background-color: #0a0a0c;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #e0e0e0;
+            line-height: 1.3;
+            padding: 1rem 1.2rem 2rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Kontainer utama */
+        .container {
+            max-width: 580px;
+            width: 100%;
+            margin: 0 auto;
+            background: #0f0f12;
+            border-radius: 28px;
+            padding: 1.5rem 1.2rem 2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            border: 1px solid #222;
+        }
+
+        /* Logo – diturunkan sedikit dari atas */
+        .logo-area {
+            text-align: center;
+            margin-top: 0.25rem;    /* turunkan sedikit */
+            margin-bottom: 1.8rem;
+        }
+        .logo {
+            max-width: 140px;
+            width: 100%;
+            height: auto;
+            display: inline-block;
+            opacity: 0.92;
+        }
+
+        /* Grid informasi – serius, rapi, huruf kecil */
+        .metrics-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            margin-bottom: 2rem;
+        }
+        .metric {
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+            font-weight: 500;
+            background: #131318;
+            padding: 0.7rem 1rem;
+            border-radius: 18px;
+            border-left: 3px solid #2e8b57;
+            color: #ccc;
+        }
+        /* Nilai spesial dengan warna eye-catching (tanpa motion) */
+        .metric.high-value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #5bc0be;
+            border-left-color: #5bc0be;
+            background: #101016;
+        }
+        .metric.large {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #d0e6a5;
+            border-left-color: #b0d16b;
+            letter-spacing: -0.3px;
+        }
+        /* Informasi CH, bandwidth, konsensus tetap rapi */
+        .metric:first-child, .metric:nth-child(2) {
+            font-family: monospace;
+            font-size: 0.8rem;
+        }
+
+        /* Tombol group – kecil, tegas */
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 1.6rem;
+        }
+        .action-btn {
+            background: #1e1e26;
+            border: 1px solid #333;
+            padding: 0.5rem 1rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #cfcfcf;
+            border-radius: 40px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: none;
+            font-family: inherit;
+        }
+        .action-btn:active {
+            background: #2a2a34;
+        }
+        /* Hilangkan efek hover gerak */
+        .action-btn:hover {
+            background: #1e1e26;
+            color: #cfcfcf;
+        }
+
+        /* Kotak Google Search (kotak ke 3 paling bawah) */
+        .search-container {
+            background: #14141a;
+            border-radius: 32px;
+            padding: 0.6rem 0.8rem;
+            margin: 0.5rem 0 1.4rem;
+            border: 1px solid #2a2a32;
+        }
+        .search-form {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+        }
+        .search-input {
+            flex: 1;
+            background: #0c0c10;
+            border: none;
+            padding: 0.7rem 1rem;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            color: #fff;
+            font-family: inherit;
+            outline: none;
+            border: 1px solid #2c2c34;
+        }
+        .search-input:focus {
+            border-color: #4f9e7a;
+        }
+        .search-btn {
+            background: #2a6b4e;
+            border: none;
+            color: white;
+            font-weight: 600;
+            font-size: 0.75rem;
+            padding: 0.6rem 1rem;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: none;
+            letter-spacing: 0.5px;
+        }
+        .search-btn:active {
+            background: #1f543e;
+        }
+
+        /* Footer kecil */
+        .footer {
+            font-size: 0.55rem;
+            text-align: center;
+            color: #5a5a6e;
+            margin-top: 1.2rem;
+            line-height: 1.4;
+            border-top: 1px solid #202024;
+            padding-top: 1rem;
+        }
+
+        /* Touch optimization */
+        button, .action-btn, .search-btn {
+            touch-action: manipulation;
+        }
+
+        /* Tidak ada efek gerakan sama sekali */
+        img, div, button, a {
+            transform: none !important;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Logo area: turun sedikit dari posisi awal -->
+    <div class="logo-area">
+        <img src="Logo.jpg" alt="EXOS+ Logo" class="logo">
+    </div>
+
+    <!-- Metrics sesuai dengan snapshot namun tanpa simbol motion dan lebih ringkas -->
+    <div class="metrics-grid">
+        <div class="metric">real_time asset synthesis</div>
+        <div class="metric">Photonic compute fabric</div>
+        <div class="metric high-value">> 10⁶ events/sec</div>
+        <div class="metric">CH_088: NEWS_SYNTH</div>
+        <div class="metric large">4.26B/s</div>
+        <div class="metric">BANDWIDTH · SYNTHETIC MEDIA STREAM</div>
+        <div class="metric">Global agentic consensus</div>
+    </div>
+
+    <!-- Tombol kecil : Initialize Stream (dummy) dan View Architecture (panggil architecture.html) -->
+    <div class="button-group">
+        <button class="action-btn" id="initStreamBtn">INITIALIZE STREAM</button>
+        <a href="architecture.html" class="action-btn">VIEW ARCHITECTURE</a>
+    </div>
+
+    <!-- Kotak Google Search (web search engine) -->
+    <div class="search-container">
+        <form class="search-form" action="https://www.google.com/search" method="get" target="_blank">
+            <input type="text" name="q" class="search-input" placeholder="Search" aria-label="Google Search">
+            <button type="submit" class="search-btn">Search</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        EXOS+ TV · Sovereign Agentic Intelligence · Distributed by EXOS+ Infrastructure<br>
+        *Simulated metrics for agentic broadcast layer | Linear is dead.
+    </div>
+</div>
+
+<script>
+    // Tombol INITIALIZE STREAM tanpa animasi, hanya alert/netral
+    document.getElementById('initStreamBtn').addEventListener('click', function() {
+        alert('[SIMULATED] Agentic stream initialized. (no motion)');
+    });
+    // Pastikan tidak ada efek floating/gerakan
+</script>
+</body>
+</html>
